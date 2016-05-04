@@ -6,6 +6,7 @@
         {% block stylesheets %} {% endblock %}
         <link rel="stylesheet" href="{{ asset('library/bootstrap/css/bootstrap.min.css') }}"/>
         <link rel="stylesheet" href="{{ asset('library/font-awesome/css/font-awesome.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('custom/css/custom.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
@@ -14,6 +15,8 @@
         {% endblock %}
         
         {% block javascripts %} {% endblock %}
+        <script src="{{ asset('library/jquery/jquery-1.12.0.js') }}"></script>
         <script src="{{ asset('library/bootstrap/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('custom/js/custom.js') }}"></script>
     </body>
 </html>
