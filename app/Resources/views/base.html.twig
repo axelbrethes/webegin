@@ -2,12 +2,18 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %} webegin {% endblock %}</title>
+        {% block stylesheets %} {% endblock %}
+        <link rel="stylesheet" href="{{ asset('library/bootstrap/css/bootstrap.min.css') }}"/>
+        <link rel="stylesheet" href="{{ asset('library/font-awesome/css/font-awesome.min.css') }}"/>
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        
+        {% endblock %}
+        
+        {% block javascripts %} {% endblock %}
+        <script src="{{ asset('library/bootstrap/js/bootstrap.js') }}"></script>
     </body>
 </html>
