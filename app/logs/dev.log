@@ -1,0 +1,8 @@
+[2016-05-10 11:46:51] request.INFO: Matched route "webegin_homepage". {"route_parameters":{"_controller":"AppBundle\\Controller\\AppController::indexAction","_route":"webegin_homepage"},"request_uri":"http://localhost/webegin/web/app_dev.php/"} []
+[2016-05-10 11:46:51] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-05-10 11:46:53] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"1f63d4","_route":"_wdt"},"request_uri":"http://localhost/webegin/web/app_dev.php/_wdt/1f63d4"} []
+[2016-05-10 13:14:48] php.DEBUG: symlink(): Could not fetch file information(error 3) {"type":2,"file":"C:\\UwAmp\\www\\webegin\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":332,"level":28928} []
+[2016-05-10 13:14:48] php.DEBUG: symlink(): Cannot create symlink, error code(1314) {"type":2,"file":"C:\\UwAmp\\www\\webegin\\vendor\\symfony\\symfony\\src\\Symfony\\Component\\Filesystem\\Filesystem.php","line":332,"level":28928} []
+[2016-05-10 13:17:19] request.INFO: Matched route "webegin_homepage". {"route_parameters":{"_controller":"AppBundle\\Controller\\AppController::indexAction","_route":"webegin_homepage"},"request_uri":"http://localhost/webegin/web/app_dev.php/"} []
+[2016-05-10 13:17:19] security.INFO: Populated the TokenStorage with an anonymous Token. [] []
+[2016-05-10 13:17:20] request.INFO: Matched route "_wdt". {"route_parameters":{"_controller":"web_profiler.controller.profiler:toolbarAction","token":"5c843a","_route":"_wdt"},"request_uri":"http://localhost/webegin/web/app_dev.php/_wdt/5c843a"} []
