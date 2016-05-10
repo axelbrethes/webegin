@@ -5,8 +5,16 @@
 			<hr>
 			<p class="text-left pull-left text-muted" style="margin-bottom:20px;"><i>webegin is a framework based on Symfony for help developers to create websites faster.</i></p>
 			<p class="text-right pull-right">
-				<a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Login</a>
-				<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
+				
+				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                {{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
+	                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">
+	                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
+	                </a>
+	            {% else %}
+	            	<a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Login</a>
+					<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
+	            {% endif %}
 			</p>
 		</div>
 	</div>
