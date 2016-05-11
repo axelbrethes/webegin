@@ -16,6 +16,9 @@
                 	<span style="color:white">
                 		{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
                 	</span>
+                	{% if is_granted("ROLE_ADMIN") %}
+                	<a href="{{ path('admin_homepage') }}" class="btn btn-success"><i class="fa fa-cog"></i> Admin</a>
+                	{% endif %}
 	                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">
 	                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
 	                </a>
