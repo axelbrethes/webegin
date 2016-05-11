@@ -1,7 +1,7 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
-    database_port: null
+    database_port: 8889
     database_name: webegin
     database_user: webegin
     database_password: webegin
@@ -10,3 +10,9 @@ parameters:
     mailer_user: null
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
+    
+    api_facebook_id:      166739570393573 
+    api_facebook_secret:  4472bebe20a853d9794e78cd34f3cc59 
+    api_facebook_name:    http://apps.facebook.com/webegin/ 
+    api_facebook_server:  http://localhost:8888/webegin/web/ 
+    
