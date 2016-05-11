@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:fb="http://www.facebook.com/2008/fbml">
+<html>
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %} webegin {% endblock %}</title>
@@ -11,24 +11,6 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-	    {{ facebook_initialize({'xfbml': true, 'culture': 'fr_FR', 'fbAsyncInit': 'onFbInit();'}) }}
-	        <script type="text/javascript" > // Script for FOSFacebookBundle
-	        function goLogIn(){
-	        	window.location.href = "{{ path('_security_check_fb') }}";
-	        }
-	 
-	        function onFbInit() {
-	            if (typeof(FB) != 'undefined' && FB != null ) {
-	                FB.Event.subscribe('auth.statusChange', function(response) {
-	                    if (response.session || response.authResponse) {
-	                        setTimeout(goLogIn, 50);
-	                    } else {
-	                        window.location = "{{ path('_security_logout') }}";
-	                    }
-	                });
-	            }
-	        }
-	        </script>
         {% block body %}
         
         {% endblock %}
