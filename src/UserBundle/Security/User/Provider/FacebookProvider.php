@@ -3,6 +3,7 @@
 namespace UserBundle\Security\User\Provider;
  
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Facebook;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -21,6 +22,9 @@ class FacebookProvider implements UserProviderInterface
  
     public function __construct(BaseFacebook $facebook, $userManager, $validator)
     {
+    	Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYPEER] = false;
+    	Facebook::$CURL_OPTS[CURLOPT_SSL_VERIFYHOST] = 2;
+    	
         $this->facebook = $facebook;
         $this->userManager = $userManager;
         $this->validator = $validator;

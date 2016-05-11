@@ -21,21 +21,21 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="firstname", type="string", length=255)
+     * @ORM\Column(name="firstname", type="string", length=255, nullable=true)
      */
     protected $firstname;
  
     /**
      * @var string
      *
-     * @ORM\Column(name="lastname", type="string", length=255)
+     * @ORM\Column(name="lastname", type="string", length=255, nullable=true)
      */
     protected $lastname;
  
     /**
      * @var string
      *
-     * @ORM\Column(name="facebookId", type="string", length=255)
+     * @ORM\Column(name="facebookId", type="string", length=255, nullable=true)
      */
     protected $facebookId;
  

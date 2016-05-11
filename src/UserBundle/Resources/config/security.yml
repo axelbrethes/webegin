@@ -17,13 +17,17 @@ security:
             pattern: .*
             
             form_login:
+                login_path: /login
+                check_path: /login_check
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
                 
             fos_facebook:
                 app_url: "%api_facebook_name%"
                 server_url: "%api_facebook_server%"
-                check_path: /login_facebook_check
+                login_path: /login
+                check_path: /login_check/facebook
+                default_target_path: /
                 provider: my_facebook_provider
                 
             remember_me:

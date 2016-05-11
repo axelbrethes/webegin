@@ -21,7 +21,7 @@
 			{% if error %}
 			    <p class="text-left text-danger">{{ error|trans({}, 'FOSUserBundle') }}</p>
 			{% endif %}
-			
+			{{ facebook_login_button({'autologoutlink': false}) }}
 			<form action="{{ path("fos_user_security_check") }}" method="post">
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 				<div class="form-group">
