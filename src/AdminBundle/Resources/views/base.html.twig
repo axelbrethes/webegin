@@ -4,7 +4,13 @@
 
 {% block title %} webegin {% endblock %}
 
-{% block stylesheets %} {% endblock %}
+{% block stylesheets %} 
+
+	{% stylesheets '@AdminBundle/Resources/public/css/dashboard.css' %}
+		<link rel="stylesheet" href="{{ asset_url }}"/>
+	{% endstylesheets %}
+
+{% endblock %}
 
 {% block javascripts %} {% endblock %}
 

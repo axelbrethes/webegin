@@ -72,4 +72,11 @@ fos_user:
     db_driver: orm 
     firewall_name: main
     user_class: UserBundle\Entity\User
+    
+# Assetic Configuration
+assetic:
+    debug: '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
                        
