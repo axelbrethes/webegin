@@ -15,8 +15,14 @@
 {% block javascripts %} {% endblock %}
 
 {% block body %} 
-
-<!-- body -->
-page d'administration
+	{% include "AdminBundle::/headers/header_default.html.twig" %}
+	<!-- body -->
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 col-md-2 sidebar">
+				{% include "AdminBundle::/menus/menu_default.html.twig" %}
+			</div>
+		</div>
+	</div>
 
 {% endblock %}
