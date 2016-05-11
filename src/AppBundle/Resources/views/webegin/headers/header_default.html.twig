@@ -19,6 +19,7 @@
                 	{% if is_granted("ROLE_ADMIN") %}
                 	<a href="{{ path('admin_homepage') }}" class="btn btn-success"><i class="fa fa-cog"></i> Admin</a>
                 	{% endif %}
+                	{{ facebook_login_button({'autologoutlink': false}) }}
 	                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">
 	                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
 	                </a>

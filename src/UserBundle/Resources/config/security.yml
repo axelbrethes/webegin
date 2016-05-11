@@ -5,8 +5,6 @@ security:
     providers:
         fos_userbundle:
             id: fos_user.user_provider.username
-        my_facebook_provider:
-            id: my_user.facebook_provider
             
     firewalls:
         dev:
@@ -21,14 +19,6 @@ security:
                 check_path: /login_check
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-                
-            fos_facebook:
-                app_url: "%api_facebook_name%"
-                server_url: "%api_facebook_server%"
-                login_path: /login
-                check_path: /login_check/facebook
-                default_target_path: /
-                provider: my_facebook_provider
                 
             remember_me:
                 key:      "%secret%"

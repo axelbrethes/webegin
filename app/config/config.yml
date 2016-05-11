@@ -78,13 +78,4 @@ assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
     filters:
-        cssrewrite: ~
-
-# FOSFacebookBundle Configuration
-fos_facebook:
-    alias:  facebook
-    app_id: '%api_facebook_id%'
-    secret: '%api_facebook_secret%'
-    cookie: true
-    permissions: [email, user_birthday, user_location]
-                       
+        cssrewrite: ~                       
