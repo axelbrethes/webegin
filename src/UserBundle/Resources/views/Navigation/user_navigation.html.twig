@@ -1,8 +1,5 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
 	<!-- UTILISATEUR AUTHENTIFIÉ -->
-	<div class="btn-group">
-  		
-	</div>
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="{{ path('webegin_homepage') }}">Home</a></li>
 		<li class="dropdown">
@@ -32,6 +29,3 @@
 		<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
 	</form>
 {% endif %}
-
-	
-<!--<img src="https://graph.facebook.com//picture" style="max-width:33px;max-height:33px;border-radius:4px;"/>-->
