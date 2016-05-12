@@ -14,8 +14,9 @@
 			<form class="navbar-form navbar-right">
 				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
                 	<span style="color:white">
-                		{{ 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') }}
-                		<img src="https://graph.facebook.com/{{ app.user.username }}/picture" style="max-width:34px;max-height:34px;border-radius:4px;"/>
+                		{# 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') #}
+                		Logged in as {{ app.user.getFacebookFirstName() }} {{ app.user.getFacebookLastName() }}
+                		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:34px;max-height:34px;border-radius:4px;"/>
                 	</span>
                 	{% if is_granted("ROLE_ADMIN") %}
                 	<a href="{{ path('admin_homepage') }}" class="btn btn-success"><i class="fa fa-cog"></i> Admin</a>

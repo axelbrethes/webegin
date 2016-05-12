@@ -49,15 +49,22 @@ class FOSUBUserProvider extends BaseClass
             $user = $this->userManager->createUser();
             $user->$setter_id($username);
             $user->$setter_token($response->getAccessToken());
-            //I have set all requested data with the user's username
-            //modify here with relevant data
             
-            $user->setUsername($username);
-            $user->setEmail($username);
-            $user->setPlainPassword($username);
-            $user->setEnabled(true);
-            $this->userManager->updateUser($user);
-            return $user;
+            if ($service == "facebook"){
+            	
+            	$firstName = $response->getFirstName();
+            	$lastName =  $response->getLastName();
+            	$fullName =  $firstName . $lastName;
+            	$email = $response->getEmail();
+            	$user->setUsername($fullName);
+	            $user->setEmail($email);
+	            $user->setFacebookFirstName($firstName);
+	            $user->setFacebookLastName($lastName);
+	            $user->setPlainPassword($username);
+	            $user->setEnabled(true);
+	            $this->userManager->updateUser($user);
+	            return $user;
+            }
         }
         //if user exists - go with the HWIOAuth way
         $user = parent::loadUserByOAuthUserResponse($response);
