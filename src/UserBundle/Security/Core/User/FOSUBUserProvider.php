@@ -56,7 +56,7 @@ class FOSUBUserProvider extends BaseClass
             	$lastName =  $response->getLastName();
             	$fullName =  $firstName . $lastName;
             	$email = $response->getEmail();
-            	$user->setUsername($fullName);
+            	$user->setUsername($username);
 	            $user->setEmail($email);
 	            $user->setFacebookFirstName($firstName);
 	            $user->setFacebookLastName($lastName);
