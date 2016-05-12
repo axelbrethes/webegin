@@ -23,6 +23,7 @@
 	                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
 	                </a>
 	            {% else %}
+	            	{{ render(url('hwi_oauth_connect')) }}
 	            	<a href="{{ path('fos_user_security_login') }}" class="btn btn-primary">Login</a>
 					<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
 	            {% endif %}

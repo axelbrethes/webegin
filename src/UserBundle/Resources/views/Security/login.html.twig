@@ -17,10 +17,14 @@
 		<div class="col-md-4" style="margin-top:20px;background-color:white">
 			<h3 class="text-center">Login</h3>
 			<hr>
+			
 			{% block fos_user_content %}
 			{% if error %}
 			    <p class="text-left text-danger">{{ error|trans({}, 'FOSUserBundle') }}</p>
 			{% endif %}
+			<div class="form-group">
+				<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" alt="Sign in with Facebook" class="form-control btn btn-primary"><i class="fa fa-facebook"></i> Sign in with Facebook</a>
+			</div>
 			<form action="{{ path("fos_user_security_check") }}" method="post">
 				<input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
 				<div class="form-group">

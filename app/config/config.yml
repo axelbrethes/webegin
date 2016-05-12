@@ -1,5 +1,6 @@
 imports:
     - { resource: parameters.yml }
+    - { resource: "@UserBundle/Resources/config/parameters.yml" }
     - { resource: security.yml }
     - { resource: services.yml }
     - { resource: "@UserBundle/Resources/config/services.yml" }
@@ -78,4 +79,27 @@ assetic:
     debug: '%kernel.debug%'
     use_controller: '%kernel.debug%'
     filters:
-        cssrewrite: ~                       
+        cssrewrite: ~ 
+        
+# HWIOAuthBundle Configuration
+hwi_oauth:
+    #this is my custom user provider, created from FOSUBUserProvider - will manage the 
+    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
+    #and also, the connecting part (get the token and the user_id)
+    connect:
+        account_connector: my_user_provider
+    # name of the firewall in which this bundle is active, this setting MUST be set
+    firewall_name: main
+    fosub:
+        username_iterations: 30
+        properties:
+            # these properties will be used/redefined later in the custom FOSUBUserProvider service.
+            facebook: facebook_id
+            google: google_id
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           "%facebook_app_id%"
+            client_secret:       "%facebook_app_secret%"
+            scope:               ""
+                      
