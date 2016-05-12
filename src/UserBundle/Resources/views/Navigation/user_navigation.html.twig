@@ -1,0 +1,37 @@
+{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+	<!-- UTILISATEUR AUTHENTIFIÉ -->
+	<div class="btn-group">
+  		
+	</div>
+	<ul class="nav navbar-nav navbar-right">
+		<li><a href="{{ path('webegin_homepage') }}">Home</a></li>
+		<li class="dropdown">
+	    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	    		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:25px;max-height:25px;border-radius:12.5px;margin-right:5px;"/>  
+		    	{{ app.user.getFacebookFirstName() }} {{ app.user.getFacebookLastName() }}  
+		    	<span class="caret"></span>
+	    	</a>
+			<ul class="dropdown-menu">
+			    <li><a href="#"><i class="fa fa-user"></i> Profile </a></li>
+			    {% if is_granted("ROLE_ADMIN") %}
+					<!-- UTILISATEUR ADMINISTRATEUR -->
+					<li>
+						<a href="{{ path('admin_homepage') }}"><i class="fa fa-cog"></i> Manager</a>
+					</li>
+				{% endif %}
+			    <li role="separator" class="divider"></li>
+			    <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-power-off"></i> Sign out</a></li>
+			</ul>
+	    </li>
+    </ul>	
+{% else %}
+	<!-- UTILISATEUR NON AUTHENTIFIÉ -->
+	<form class="navbar-form navbar-right">
+		<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" alt="Sign in with Facebook" class="btn btn-primary"><i class="fa fa-facebook"></i> Connect</a>
+		<a href="{{ path('fos_user_security_login') }}" class="btn btn-success">Login</a>
+		<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
+	</form>
+{% endif %}
+
+	
+<!--<img src="https://graph.facebook.com//picture" style="max-width:33px;max-height:33px;border-radius:4px;"/>-->

@@ -10,26 +10,8 @@
 			</button>
 			<a class="navbar-brand" href="#">webegin</a>
 		</div>
-		<div id="navbar" class="navbar-collapse collapse">
-			<form class="navbar-form navbar-right">
-				{% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-                	<span style="color:white">
-                		{# 'layout.logged_in_as'|trans({'%username%': app.user.username}, 'FOSUserBundle') #}
-                		Logged in as {{ app.user.getFacebookFirstName() }} {{ app.user.getFacebookLastName() }}
-                		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:33px;max-height:33px;border-radius:4px;"/>
-                	</span>
-                	{% if is_granted("ROLE_ADMIN") %}
-                	<a href="{{ path('admin_homepage') }}" class="btn btn-success"><i class="fa fa-cog"></i> Admin</a>
-                	{% endif %}
-	                <a href="{{ path('fos_user_security_logout') }}" class="btn btn-danger">
-	                    {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
-	                </a>
-	            {% else %}
-	            	<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" alt="Sign in with Facebook" class="btn btn-primary"><i class="fa fa-facebook"></i> Connect</a>
-	            	<a href="{{ path('fos_user_security_login') }}" class="btn btn-success">Login</a>
-					<a href="{{ path('fos_user_registration_register') }}" class="btn btn-info">Register</a>
-	            {% endif %}
-			</form>
+		<div id="navbar" class="navbar-collapse collapse">	
+			{% include "UserBundle::Navigation/user_navigation.html.twig" %}
 		</div><!--/.navbar-collapse -->
 	</div>
 	</div>
