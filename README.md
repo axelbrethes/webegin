@@ -1,4 +1,4 @@
-#webegin v0.0.2
+#webegin version-1.0
 
 webegin is a framework based on Symfony for help developers to create websites faster.
 
