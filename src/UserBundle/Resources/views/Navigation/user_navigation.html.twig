@@ -4,8 +4,14 @@
 		<li><a href="{{ path('webegin_homepage') }}">Home</a></li>
 		<li class="dropdown">
 	    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	    		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:23px;max-height:23px;border-radius:11.5px;margin-right:5px;"/>  
-		    	{{ app.user.getFacebookFirstName() }} {{ app.user.getFacebookLastName() }}  
+	    		
+	    		{% if app.user.getFacebookId() != null %}
+	    			<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:23px;max-height:23px;border-radius:11.5px;margin-right:5px;"/>  
+		    		{{ app.user.getFirstName() }} {{ app.user.getLastName() }}
+		    	{% else %}
+		    		{{ app.user.username }}
+		    	{% endif %}
+		    	  
 		    	<span class="caret"></span>
 	    	</a>
 			<ul class="dropdown-menu">

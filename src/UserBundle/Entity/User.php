@@ -18,6 +18,14 @@ class User extends BaseUser
      */
     protected $id;
     
+    /** @ORM\Column(name="first_name", type="string", length=255, nullable=true) */
+    
+    protected $first_name;
+    
+    /** @ORM\Column(name="last_name", type="string", length=255, nullable=true) */
+    
+    protected $last_name;
+    
     /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
     
     protected $facebook_id;
@@ -134,5 +142,53 @@ class User extends BaseUser
     public function getFacebookLastName()
     {
         return $this->facebook_last_name;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return User
+     */
+    public function setFirstName($firstName)
+    {
+        $this->first_name = $firstName;
+
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string
+     */
+    public function getFirstName()
+    {
+        return $this->first_name;
+    }
+
+    /**
+     * Set lastName
+     *
+     * @param string $lastName
+     *
+     * @return User
+     */
+    public function setLastName($lastName)
+    {
+        $this->last_name = $lastName;
+
+        return $this;
+    }
+
+    /**
+     * Get lastName
+     *
+     * @return string
+     */
+    public function getLastName()
+    {
+        return $this->last_name;
     }
 }

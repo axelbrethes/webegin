@@ -67,6 +67,8 @@ class FOSUBUserProvider extends BaseClass
 	            $user->setEmail($email);
 	            $user->setFacebookFirstName($firstName);
 	            $user->setFacebookLastName($lastName);
+	            $user->setFirstName($firstName);
+	            $user->setLastName($lastName);
 	            $user->setPlainPassword($username);
 	            $user->setEnabled(true);
 	            
