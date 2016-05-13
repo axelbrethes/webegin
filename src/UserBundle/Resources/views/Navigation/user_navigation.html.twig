@@ -1,10 +1,10 @@
 {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
-	<!-- UTILISATEUR AUTHENTIFIÉ -->
+	<!-- UTILISATEUR AUTHENTIFIE -->
 	<ul class="nav navbar-nav navbar-right">
 		<li><a href="{{ path('webegin_homepage') }}">Home</a></li>
 		<li class="dropdown">
 	    	<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-	    		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:25px;max-height:25px;border-radius:12.5px;margin-right:5px;"/>  
+	    		<img src="https://graph.facebook.com/{{ app.user.getFacebookId() }}/picture" style="max-width:23px;max-height:23px;border-radius:11.5px;margin-right:5px;"/>  
 		    	{{ app.user.getFacebookFirstName() }} {{ app.user.getFacebookLastName() }}  
 		    	<span class="caret"></span>
 	    	</a>
@@ -17,12 +17,12 @@
 					</li>
 				{% endif %}
 			    <li role="separator" class="divider"></li>
-			    <li><a href="{{ path('fos_user_security_logout') }}"><i class="fa fa-power-off"></i> Sign out</a></li>
+			    <li><a href="{{ path('fos_user_security_logout') }}"><span class="text-danger"><i class="fa fa-power-off"></i> Sign out</span></a></li>
 			</ul>
 	    </li>
     </ul>	
 {% else %}
-	<!-- UTILISATEUR NON AUTHENTIFIÉ -->
+	<!-- UTILISATEUR NON AUTHENTIFIE -->
 	<form class="navbar-form navbar-right">
 		<a href="{{ path('hwi_oauth_service_redirect', {'service': 'facebook' }) }}" alt="Sign in with Facebook" class="btn btn-primary"><i class="fa fa-facebook"></i> Connect</a>
 		<a href="{{ path('fos_user_security_login') }}" class="btn btn-success">Login</a>
