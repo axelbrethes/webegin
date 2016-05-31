@@ -1,0 +1,21 @@
+{% extends "::base.html.twig" %}
+
+{% block title %} webegin {% endblock %}
+
+{% block stylesheets %} {% endblock %}
+
+{% block javascripts %} {% endblock %}
+
+{% block body %} 
+{% include "AppBundle::headers/header_default.html.twig" %}
+<!-- body -->
+<div class="container" style="margin-top:60px;">
+
+{% block fos_user_content %}
+{% include "UserBundle:Profile:show_content.html.twig" %}
+{% endblock fos_user_content %}
+
+</div>
+
+
+{% endblock %}
