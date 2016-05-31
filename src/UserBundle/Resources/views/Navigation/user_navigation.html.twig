@@ -15,7 +15,7 @@
 		    	<span class="caret"></span>
 	    	</a>
 			<ul class="dropdown-menu">
-			    <li><a href="#"><i class="fa fa-user"></i> Profile </a></li>
+			    <li><a href="{{ path('fos_user_profile_show') }}"><i class="fa fa-user"></i> Profile </a></li>
 			    {% if is_granted("ROLE_ADMIN") %}
 					<!-- UTILISATEUR ADMINISTRATEUR -->
 					<li>
