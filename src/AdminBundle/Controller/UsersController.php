@@ -15,6 +15,13 @@ class UsersController extends Controller
      */
     public function viewAcion(Request $request)
     {
-        return array();
+    	//Entity Manager
+    	$em = $this->getDoctrine()->getManager();
+    	
+    	$users = $em->getRepository("UserBundle\Entity\User")->findAll();
+    	
+        return array(
+        		"users" => $users,
+        );
     }
 }
