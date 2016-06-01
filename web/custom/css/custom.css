@@ -1,3 +1,9 @@
 body {
 	background-color: rgba(250,250,250, 0.9);
 }
+.dataTables_info{
+	text-align: left;
+}
+.dataTables_filter, .dataTables_paginate {
+	text-align: right;
+}

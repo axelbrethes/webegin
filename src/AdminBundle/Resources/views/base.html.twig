@@ -9,10 +9,14 @@
 	{% stylesheets '@AdminBundle/Resources/public/css/dashboard.css' %}
 		<link rel="stylesheet" href="{{ asset_url }}"/>
 	{% endstylesheets %}
-
+	<link rel="stylesheet" href="{{ asset('library/datatables/media/cs/dataTables.bootstrap.min.css') }}" />
 {% endblock %}
 
-{% block javascripts %} {% endblock %}
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('library/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+	<script src="{{ asset('library/datatables/media/js/dataTables.bootstrap.min.js') }}"></script>
+{% endblock %}
 
 {% block body %} 
 	{% include "AppBundle::headers/header_default.html.twig" %}

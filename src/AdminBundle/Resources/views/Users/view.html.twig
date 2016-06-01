@@ -4,5 +4,41 @@
 
 <h1 class="text-left page-header">Users</h1>
 
+<div class="col-md-12 col-sm-12">
+	<div class="row">
+		<table class="table table-bordered table-stripped table-hover" id="table-users">
+			<thead>
+				<tr>
+					<th><b>#id</b></th>
+					<th><b>username</b></th>
+					<th><b>email</b></th>
+					<th><b>firstname</b></th>
+					<th><b>lastname</b></th>
+					<th><b>facebook</b></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+{% endblock %}
 
+{% block javascripts %}
+	{{ parent() }}
+	<script>
+	$('#table-users').DataTable();
+	
+	$(window).bind('resize', function() {
+		$('#table-users').css('width', '100%');
+	});
+	</script>
 {% endblock %}
